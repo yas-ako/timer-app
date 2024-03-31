@@ -1,9 +1,8 @@
 <template>
   <div>
+    <header>ヘッダー</header>
     <!-- <NuxtWelcome /> -->
-    <div v-if="isActive" @click="pauseTimer()">pauseTimer</div>
-    <div v-else @click="startTimer()">startTimer</div>
-    <div>
+    <!-- <div>
       {{
         new Date(elapsedTime)
           .toISOString()
@@ -13,17 +12,24 @@
     </div>
     <div>
       {{ new Date(elapsedTime).toISOString() }}
-    </div>
-    <div class="flex flex-col">
-      <div
-        v-for="data in formatMilliseconds(elapsedTime)"
-        :key="data"
-        class="w-1/4"
-      >
-        <div>{{ data[0] }}</div>
-        <div>{{ data[1] }}</div>
+    </div> -->
+    <main>
+      <div class="my-4 flex justify-center">
+        <div
+          v-for="data in formatMilliseconds(elapsedTime)"
+          :key="data"
+          class="flex w-1/4 items-end"
+        >
+          <div class="text-5xl">{{ data[0] }}</div>
+          <div class="text-lg">{{ data[1] }}</div>
+        </div>
       </div>
-    </div>
+      <div class="mx-auto my-4 bg-lime-400 p-3 text-center">
+        <div v-if="isActive" @click="pauseTimer()">一時停止</div>
+        <div v-else @click="startTimer()">開始</div>
+      </div>
+    </main>
+    <footer>フッター</footer>
   </div>
 </template>
 
