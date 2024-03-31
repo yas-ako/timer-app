@@ -24,7 +24,9 @@
           <div class="text-lg">{{ data[1] }}</div>
         </div>
       </div>
-      <div class="mx-auto my-4 bg-lime-400 p-3 text-center">
+      <div
+        class="mx-auto my-4 cursor-pointer select-none bg-lime-400 p-3 text-center"
+      >
         <div v-if="isActive" @click="pauseTimer()">一時停止</div>
         <div v-else @click="startTimer()">開始</div>
       </div>
