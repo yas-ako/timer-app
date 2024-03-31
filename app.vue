@@ -17,7 +17,7 @@
     <div class="flex flex-col">
       <div
         v-for="data in formatMilliseconds(elapsedTime)"
-        key="data"
+        :key="data"
         class="w-1/4"
       >
         <div>{{ data[0] }}</div>
