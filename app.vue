@@ -18,7 +18,17 @@
         <div
           v-for="data in formatMilliseconds(elapsedTime)"
           :key="data"
-          class="flex w-1/4 items-end"
+          class="flex w-1/4 items-end justify-center"
+        >
+          <div class="text-5xl">{{ data[0] }}</div>
+          <div class="text-lg">{{ data[1] }}</div>
+        </div>
+      </div>
+      <div class="my-4 flex justify-center">
+        <div
+          v-for="data in formatMilliseconds(currentClockTime)"
+          :key="data"
+          class="flex w-1/4 items-end justify-center"
         >
           <div class="text-5xl">{{ data[0] }}</div>
           <div class="text-lg">{{ data[1] }}</div>
@@ -38,7 +48,9 @@
 <script setup>
   const startTime = ref();
   const elapsedTime = ref(0);
+  const currentClockTime = ref(0);
   let timerInterval;
+  let clockInterval;
   const isActive = ref(false);
 
   function startTimer() {
@@ -88,4 +100,10 @@
   function padZero(num) {
     return num.toString().padStart(2, "0");
   }
+
+  // onMounted(() => {
+  clockInterval = setInterval(() => {
+    currentClockTime.value = Date.now() - new Date().setHours(0, 0, 0, 0);
+  }, 100);
+  // });
 </script>
