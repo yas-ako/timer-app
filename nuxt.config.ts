@@ -10,6 +10,7 @@ export default defineNuxtConfig({
         families: { "Noto+Sans+JP": [300, 400, 600] },
       },
     ],
+    "@vite-pwa/nuxt",
   ],
   css: ["~/assets/css/style.css"],
 });
