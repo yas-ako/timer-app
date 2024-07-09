@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   // https://zenn.dev/tanukikyo/articles/a8dda0432bd777#%E3%80%8Cnuxt.config.ts%E3%80%8D%E3%81%AE%E8%A8%AD%E5%AE%9A
   app: {
     head: {
-      meta: [{ name: "theme-color", content: "#326CB3" }],
+      meta: [{ name: "theme-color", content: "#454545" }],
       link: [
         { rel: "icon", href: `/favicon.ico`, sizes: "48x48" },
         { rel: "apple-touch-icon", href: `/apple-touch-icon-180x180.png` },
