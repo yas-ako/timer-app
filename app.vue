@@ -1,47 +1,38 @@
 <template>
   <div>
-    <header>ヘッダー</header>
-    <!-- <NuxtWelcome /> -->
-    <!-- <div>
-      {{
-        new Date(elapsedTime)
-          .toISOString()
-          .substring(11, 19)
-          .replace(/^00:(\d{2}:\d{2})$/, "$1")
-      }}
-    </div>
+    <NuxtPwaManifest />
     <div>
-      {{ new Date(elapsedTime).toISOString() }}
-    </div> -->
-    <main>
-      <div class="my-4 flex justify-center">
-        <div
-          v-for="data in formatMilliseconds(elapsedTime)"
-          :key="data"
-          class="flex w-1/4 items-end justify-center"
-        >
-          <div class="text-5xl">{{ data[0] }}</div>
-          <div class="text-lg">{{ data[1] }}</div>
+      <header>ヘッダー</header>
+      <main>
+        <div class="my-4 flex justify-center">
+          <div
+            v-for="data in formatMilliseconds(elapsedTime)"
+            :key="data"
+            class="flex w-1/4 items-end justify-center"
+          >
+            <div class="text-5xl">{{ data[0] }}</div>
+            <div class="text-lg">{{ data[1] }}</div>
+          </div>
         </div>
-      </div>
-      <div class="my-4 flex justify-center">
-        <div
-          v-for="data in formatMilliseconds(currentClockTime)"
-          :key="data"
-          class="flex w-1/4 items-end justify-center"
-        >
-          <div class="text-5xl">{{ data[0] }}</div>
-          <div class="text-lg">{{ data[1] }}</div>
+        <div class="my-4 flex justify-center">
+          <div
+            v-for="data in formatMilliseconds(currentClockTime)"
+            :key="data"
+            class="flex w-1/4 items-end justify-center"
+          >
+            <div class="text-5xl">{{ data[0] }}</div>
+            <div class="text-lg">{{ data[1] }}</div>
+          </div>
         </div>
-      </div>
-      <div
-        class="mx-auto my-4 cursor-pointer select-none bg-lime-400 p-3 text-center"
-      >
-        <div v-if="isActive" @click="pauseTimer()">一時停止</div>
-        <div v-else @click="startTimer()">開始</div>
-      </div>
-    </main>
-    <footer>フッター</footer>
+        <div
+          class="mx-auto my-4 cursor-pointer select-none bg-lime-400 p-3 text-center"
+        >
+          <div v-if="isActive" @click="pauseTimer()">一時停止</div>
+          <div v-else @click="startTimer()">開始</div>
+        </div>
+      </main>
+      <footer>フッター</footer>
+    </div>
   </div>
 </template>
 
